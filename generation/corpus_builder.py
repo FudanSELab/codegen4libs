@@ -2,14 +2,12 @@ import json
 import jsonlines
 import pickle
 import string
-from collections import defaultdict
 import random
-
 import re
+from collections import defaultdict
 from tqdm import tqdm
 
 from script.extract_method import ProjectMethodExtractor
-
 from sckg.util.path_util import PathUtil
 from sckg.util.log_util import LogUtil
 
