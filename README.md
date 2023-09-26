@@ -86,6 +86,7 @@ print("output_str: ", tokenizer.decode(outputs[0], skip_special_tokens=True))
 ```
 ### Citation
 
+```
 @inproceedings{ase2023codegen4libs,
   author       = {Mingwei Liu and Tianyong Yang and Yiling Lou and Xueying Du and Ying Wang and and Xin Peng},
   title        = {{CodeGen4Libs}: A Two-stage Approach for Library-oriented Code Generation},
@@ -95,3 +96,4 @@ print("output_str: ", tokenizer.decode(outputs[0], skip_special_tokens=True))
   publisher    = {{IEEE}},
   year         = {2023},
 }
+```
