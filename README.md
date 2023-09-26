@@ -1,4 +1,5 @@
 # CodeGen4Libs
+This repo is for the ASE2023 paper titled ["CodeGen4Libs: A Two-stage Approach for Library-oriented Code Generation"](https://mingwei-liu.github.io/publication/2023-08-18-ase-CodeGen4Libs).
 
 ### Updates
 ***
@@ -83,3 +84,14 @@ input_ids = torch.as_tensor(input_ids).to("cuda")
 outputs = model.generate(input_ids, max_length=512)
 print("output_str: ", tokenizer.decode(outputs[0], skip_special_tokens=True))
 ```
+### Citation
+
+@inproceedings{ase2023codegen4libs,
+  author       = {Mingwei Liu and Tianyong Yang and Yiling Lou and Xueying Du and Ying Wang and and Xin Peng},
+  title        = {{CodeGen4Libs}: A Two-stage Approach for Library-oriented Code Generation},
+  booktitle    = {38th {IEEE/ACM} International Conference on Automated Software Engineering,
+                  {ASE} 2023, Kirchberg, Luxembourg, September 11-15, 2023},
+  pages        = {0--0},
+  publisher    = {{IEEE}},
+  year         = {2023},
+}
