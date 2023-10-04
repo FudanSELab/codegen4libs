@@ -4,10 +4,37 @@ This repo is for the ASE2023 paper titled ["CodeGen4Libs: A Two-stage Approach f
 ### Updates
 ***
 - 2023-09-10: Initial Benchmark Release
+- 2023-10-04: add Huggingface support
 ### TODO
 ***
-- Huggingface support
 - Model Implementations
+
+### Huggingface support
+
+[Hugging Face Datasets](https://huggingface.co/datasets/FudanSELab/CodeGen4Libs)
+
+#### Usage
+```python
+from datasets import load_dataset
+dataset = load_dataset("FudanSELab/CodeGen4Libs")
+```
+#### Dataset Structure
+```python
+DatasetDict({
+    train: Dataset({
+        features: ['id', 'method', 'clean_method', 'doc', 'comment', 'method_name', 'extra', 'imports_info', 'libraries_info', 'input_str', 'input_ids', 'tokenized_input_str', 'input_token_length', 'labels', 'tokenized_labels_str', 'labels_token_length', 'retrieved_imports_info', 'retrieved_code', 'imports', 'cluster_imports_info', 'libraries', 'attention_mask'],   
+        num_rows: 391811
+    })
+    validation: Dataset({
+        features: ['id', 'method', 'clean_method', 'doc', 'comment', 'method_name', 'extra', 'imports_info', 'libraries_info', 'input_str', 'input_ids', 'tokenized_input_str', 'input_token_length', 'labels', 'tokenized_labels_str', 'labels_token_length', 'retrieved_imports_info', 'retrieved_code', 'imports', 'cluster_imports_info', 'libraries', 'attention_mask'],   
+        num_rows: 5967
+    })
+    test: Dataset({
+        features: ['id', 'method', 'clean_method', 'doc', 'comment', 'method_name', 'extra', 'imports_info', 'libraries_info', 'input_str', 'input_ids', 'tokenized_input_str', 'input_token_length', 'labels', 'tokenized_labels_str', 'labels_token_length', 'retrieved_imports_info', 'retrieved_code', 'imports', 'cluster_imports_info', 'libraries', 'attention_mask'],   
+        num_rows: 6002
+    })
+})
+```
   
 ### Benchmark Format
 ***
@@ -36,10 +63,11 @@ Benchmark has been meticulously structured and saved in the DatasetDict format, 
 - labels_token_length: the length of the the tokenized output.
 
 - retrieved_imports_info: the retrieved import statements for each tuple.
-- generated_imports_info: the generated import statements for each tuple.
-- union_gen_ret_imports_info: the union of retrieved import statements and the generated import statements.
-- intersection_gen_ret_imports_info: the intersection of retrieved import statements and the generated import statements.
-- similar_code: the retrieved method-level code for each tuple.
+- retrieved_code: the retrieved method-level code for each tuple.
+- imports: the imported packages of each import statement.
+- cluster_imports_info: cluster import information of code.
+- libraries: libraries used by the code.
+- attention_mask: attention mask for the input.
 
 ### Models Download
 ***
